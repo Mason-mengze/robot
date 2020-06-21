@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Blockly
+Comment=Yanshee blockly
+Exec=/usr/local/src/yansheeblockly/launcher
+Icon=/usr/local/src/yansheeblockly/Yanshee.jpg
+Terminal=false
+Categories=Application;Development;
+MimeType=application/x-YansheeBlockly
+

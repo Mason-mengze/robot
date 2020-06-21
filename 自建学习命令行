@@ -1,0 +1,118 @@
+删除命令：rm -rf (文件名)	#re-remove	-r删除目录	-f强制
+
+下载命令：wget -r -np -pk -nH -P ./download http://www.baidu.com
+
+
+解释一下这些参数
+
+-r  递归下载所有内容
+
+-np 只下载给定URL下的内容，不下载它的上级内容
+
+-p 下载有关页面需要用到的所有资源，包括图片和css样式
+
+-k 将绝对路径转换为相对路径（这个很重要，为了在用户打开网页的时候，加载的相关资源都在本地寻找）
+
+-nH 禁止wget以接收的URL为名称创建文件夹（如果没有这个，这条命令会将下载的内容存在./download/www.baidu.com/下）
+
+-P 下载到哪个路径，这里是当前文件夹下的download文件夹下，没有的话，wget会帮你自动创建
+
+
+通过 SSH 客户端登录你的树莓派，或者进入树莓派的桌面运行终端程序，接下来就可以输入命令了。
+
+什么是 sudo 命令？
+在一行命令之前加上 sudo，表示以系统管理员身份执行这条命令。如果使用不当可能会造成事故，所以仅在特别需要使用管理员权限运行的时候添加。
+
+
+
+sudo reboot
+重启树莓派，需要管理员权限才可以执行，因此添加 sudo。
+
+
+sudo poweroff
+关机，需要管理员权限才可以执行。
+
+
+sudo shutdown -h 03:14
+定时关机，例如上面指令将设定关机时刻为凌晨3点14分。
+
+
+sudo halt
+关机。与 poweroff 不同的是，此命令会在关机前停止所有CPU功能。执行时，杀死应用进程、执行sync系统调用、文件系统写操作完成后就会停止内核。推荐使用这种方法关机。
+
+
+clear
+清除终端上的文字。
+
+
+cd /folder1/folder2
+进入到目录 /folder1/folder2。
+
+
+cd ~
+进入到当前用户的主目录。
+
+
+ls -lha
+列出当前位置的文件和目录，显示全部信息。如去掉后面的 -lha 则只列出文件名。
+
+
+sudo find / -name file.txt
+查找文件名为 file.txt 的文件。
+
+
+sudo find / -name file.txt -type f
+查找文件名为 file.txt 的文件，仅查找文件。
+
+
+sudo find / -name somedir -type d
+查找文件名为 file.txt 的文件，仅查找目录。
+
+
+sudo find / -name file.*
+查找文件名为 file.* 的文件，星号为通配符。
+
+
+sudo mv ~/file /folder1/folder2/
+将 ~/file 移动到 /folder1/folder2/。
+
+
+man command
+查看命令的使用手册。command 替换成你想了解的任何命令。
+
+
+sudo raspi-config
+打开树莓派功能配置界面。
+
+
+sudo ifconfig -a
+列出树莓派的网络配置信息。
+
+
+ping 192.168.1.1
+Ping 某个 IP。查看树莓派和这个 IP 的设备的连接状况。
+
+
+sudo apt-get update
+更新软件列表。
+
+
+sudo apt-get upgrade
+升级软件包。
+
+sudo raspi-config 初始化配置
+startx 启动图形化界面
+sudo rpi-update 升级系统
+sudo reboot 重启
+sudo shutdown -h now 立即关机
+sudo apt-get update 更新软件源
+sudo apt-get upgrade 更新已经安装的软件
+sudo apt-get install XX 安装XX软件
+su root 切换到root用户
+passwd user 设置user用户的密码
+sudo service networking restart	重启网络
+passwd user 改用户密码
+ifconfig -a 查看网络配置
+sudo iwlist wlan0 scan	扫描wifi
+gpio readall	获取gpio口信息
+root@raspberrypi:/home# df -h	查询磁盘容量
